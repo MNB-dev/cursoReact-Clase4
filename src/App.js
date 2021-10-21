@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Cabecera from './components/Cabecera';
+import LabelsContext, { defaultLabels } from './context/LabelsContext';
+import InfoPanel from './components/InfoPanel';
+import BuyBitcoins from './components/BuyBitcoins';
+import CalculadoraBitcoin from './components/CalculadoraBitcoin';
+import BitcoinWalltet from './components/BitcoinWallter';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LabelsContext.Provider value={defaultLabels}>
+      <Cabecera />
+      <InfoPanel />
+      <BitcoinWalltet />
+      <BuyBitcoins />
+      <CalculadoraBitcoin />
+    </LabelsContext.Provider>
   );
 }
 
